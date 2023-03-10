@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSearchDebounce } from 'src/hooks/useDebounce'
 import styles from './CustomInput.module.css'
 import { useBinarySearchTreeContext } from 'src/hooks/useBinarySearchTreeContext'
