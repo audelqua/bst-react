@@ -1,16 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 import { useSearchDebounce } from 'src/hooks/useDebounce'
 import styles from './CustomInput.module.css'
+import { useBinarySearchTreeContext } from 'src/hooks/useBinarySearchTreeContext'
 
-interface IBinaryInputProps { 
-    handleGenerateTree: (query: string) => void
-}
-const BinaryInput: React.FC<IBinaryInputProps> = ({ handleGenerateTree }) => {
+
+const BinaryInput = () => {
     const { handleChangeSearch, query } = useSearchDebounce()
+    const [ handleUpdateBstIngredient ] = useBinarySearchTreeContext()
 
     useEffect(() => {
-        if(query) handleGenerateTree(query)
-    }, [query, handleGenerateTree])
+        if(query) handleUpdateBstIngredient(query)
+    }, [query])
 
     return <input className={styles['input-styles']} onChange={e => handleChangeSearch(e)} />
 }

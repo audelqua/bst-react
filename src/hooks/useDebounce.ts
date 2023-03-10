@@ -12,7 +12,7 @@ export const useSearchDebounce = () => {
             if(inputValue === '') setQuery(undefined)
             else setQuery(inputValue)
             
-        }, 500);
+        }, 2000);
     }
 
     return {

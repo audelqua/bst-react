@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useState, useEffect } from 'react'
 import { useBinaryTreeGenerator } from 'src/hooks/useBinaryTreeGenerator'
 
@@ -18,7 +19,7 @@ const BinarySearchTreeProvider: React.FC<IBinarySearchTreeProps> = ({children}) 
     
     useEffect(() => {
         handleBinaryTreeGenerator(bstIngredients)
-    }, [bstIngredients, handleBinaryTreeGenerator])
+    }, [bstIngredients])
 
     return (
         <BinarySearchTreeContext.Provider 
