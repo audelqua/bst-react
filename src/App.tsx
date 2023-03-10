@@ -1,9 +1,12 @@
 import ComposerComponent from 'src/layout/ComposerLayout'
+import { BinarySearchTreeProvider } from 'src/context/BinaryTreeContext' 
 
 function App() {
   return (
     <div className="App">
-      <ComposerComponent />
+      <BinarySearchTreeProvider >
+        <ComposerComponent />
+      </BinarySearchTreeProvider>
     </div>
   );
 }

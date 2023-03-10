@@ -10,9 +10,10 @@ const BinaryInput: React.FC<IBinaryInputProps> = ({ handleGenerateTree }) => {
 
     useEffect(() => {
         if(query) handleGenerateTree(query)
-    }, [query])
+    }, [query, handleGenerateTree])
 
     return <input className={styles['input-styles']} onChange={e => handleChangeSearch(e)} />
 }
 
 export default BinaryInput
+

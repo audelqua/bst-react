@@ -1,18 +1,26 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 interface IBinarySearchTreeProps {
     children: React.ReactNode
 }
 
-const BinaryTreeContext = createContext(undefined);
-const BinaryTreeProvider: React.FC<IBinarySearchTreeProps> = ({children}) => {
+const BinarySearchTreeContext = createContext({});
+const BinarySearchTreeProvider: React.FC<IBinarySearchTreeProps> = ({children}) => {
+    const [bstIngredients, setBstIngredients] = useState<string>('')
+    
+    const handleUpdateBstIngredient = (str: string) => {
+        setBstIngredients(str)
+    }
+
     return (
-        <BinaryTreeContext.Provider 
-            value={undefined}
+        <BinarySearchTreeContext.Provider 
+            value={{
+                handleUpdateBstIngredient,
+            }}
         >
             {children}
-        </BinaryTreeContext.Provider>
+        </BinarySearchTreeContext.Provider>
     )
 }
 
-export { BinaryTreeContext, BinaryTreeProvider }
+export { BinarySearchTreeContext, BinarySearchTreeProvider }
