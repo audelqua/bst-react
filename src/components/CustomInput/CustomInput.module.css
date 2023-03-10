@@ -1,0 +1,9 @@
+
+.input-styles{
+    width: 700px;
+    height: 35px;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #afafaf;
+    font-size: 14px;
+}
