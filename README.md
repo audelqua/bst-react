@@ -1,4 +1,4 @@
-# Binary Search tree from scratch
+# Binary Search Tree From Scratch
 
 ## Available Scripts
 
