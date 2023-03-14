@@ -1,3 +1,5 @@
+import { INodeObject } from 'src/GeneralTypes'
+
 class Node {
     value: string;
     left: string | null;
@@ -59,10 +61,9 @@ export class BinarySearchTree {
         return foundString
     }
 
-    /// helper function to find the smallest node
-    findSmallestNode(current: any) {
+    findSmallestNode(current: INodeObject) {
         while (!current.left === null)
-            current = current.left
+            current = current.left!
 
         return current
     }
@@ -70,7 +71,7 @@ export class BinarySearchTree {
         this.root = this.removeNode(this.root, value)
     }
 
-    removeNode(current: any, value: string) {
+    removeNode(current: INodeObject, value: string) {
         if (current === null) return current
         if (value.localeCompare(current.value) === 0) {
             if (current.left === null && current.right === null) {
@@ -94,12 +95,12 @@ export class BinarySearchTree {
             }
         } else if (value < current.value) {
 
-            current.left = this.removeNode(current.left, value)
+            current.left = this.removeNode(current.left!, value)
             return current
 
         } else {
 
-            current.right = this.removeNode(current.right, value)
+            current.right = this.removeNode(current.right!, value)
             return current
         }
     }

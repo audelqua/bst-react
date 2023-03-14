@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState } from 'react'
 
 interface IBinarySearchTreeProps {
     children: React.ReactNode
@@ -13,7 +13,7 @@ const BinarySearchTreeProvider: React.FC<IBinarySearchTreeProps> = ({children}) 
     const handleUpdateBstIngredient = (str: string) => {
         setBstIngredients(str)
     }
-
+    
     return (
         <BinarySearchTreeContext.Provider 
             value={[

@@ -9,10 +9,8 @@ export const useSearchDebounce = () => {
         clearTimeout(searchDebounce);
 
         searchDebounce = setTimeout(() => {
-            if(inputValue === '') setQuery(undefined)
-            else setQuery(inputValue)
-            
-        }, 2000);
+            setQuery(inputValue)
+        }, 1000);
     }
 
     return {
