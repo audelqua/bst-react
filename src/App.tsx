@@ -4,7 +4,7 @@ import { BinarySearchTreeProvider } from 'src/context/BinaryTreeContext'
 function App() {
   return (
     <div className="App">
-      <BinarySearchTreeProvider >
+      <BinarySearchTreeProvider>
         <ComposerComponent />
       </BinarySearchTreeProvider>
     </div>
